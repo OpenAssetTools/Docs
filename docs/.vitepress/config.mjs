@@ -3,7 +3,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "OpenAssetTools",
   description: "Documentation for and around OpenAssetTools",
+  head: [['link', { rel: 'icon', href: '/logo_64_64.png' }]],
   themeConfig: {
+    logo: '/logo_64_64.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide', activeMatch: '\\/guide(?:\\/|$)' },
