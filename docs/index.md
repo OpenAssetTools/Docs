@@ -1,5 +1,4 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
@@ -18,14 +17,12 @@ hero:
       link: /reference/zone-file
 
 features:
-  - title: "Call Of Duty 4: Modern Warfare (2007)"
-    details: Unpacking and creation of game files and assets
-  - title: "Call Of Duty: Modern Warfare 2 (2009)"
-    details: Unpacking and creation of game files and assets
-  - title: "Call Of Duty: Modern Warfare 3 (2011)"
-    details: Unpacking and creation of game files and assets
-  - title: "Call Of Duty: Black Ops"
-    details: Unpacking and creation of game files and assets
-  - title: "Call Of Duty: Black Ops II"
-    details: Unpacking and creation of game files and assets
+  - title: 🔧 Create custom assets
+    details: Create your own mods and assets to be used in the supported games.
+  - title: 📂 Extract game files
+    details: Unpack assets and data from vanilla and custom game files.
+  - title: 🎮 Support for multiple games
+    details: Support for 5 titles (MW1, MW2, MW3, BO1, BO2).
+  - title: 🔓 Standalone
+    details: Works as a standalone toolset. Running the game is not necessary.
 ---
