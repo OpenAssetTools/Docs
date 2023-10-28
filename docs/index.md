@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Getting started
-      link: /guide/getting-started
+      link: /guide/what-is-oat
     - theme: alt
       text: Asset Reference
       link: /reference
