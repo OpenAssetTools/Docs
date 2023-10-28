@@ -1,0 +1,14 @@
+{
+  "name": "oat-docs",
+  "version": "1.0.0",
+  "description": "Documentation for and around OpenAssetTools",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.24",
+    "vue": "^3.3.7"
+  }
+}
