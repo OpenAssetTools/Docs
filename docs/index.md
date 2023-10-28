@@ -5,6 +5,9 @@ layout: home
 hero:
   name: "OpenAssetTools"
   text: "Open Source Call Of Duty Modding Tools"
+  image:
+    src: /logo.png
+    alt: OpenAssetTools
   tagline: "Documentation for and around OpenAssetTools"
   actions:
     - theme: brand
