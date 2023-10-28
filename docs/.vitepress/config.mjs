@@ -8,8 +8,8 @@ export default defineConfig({
     logo: '/logo_64_64.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide', activeMatch: '\\/guide(?:\\/|$)' },
-      { text: 'Reference', link: '/reference', activeMatch: '\\/reference(?:\\/|$)' }
+      { text: 'Guide', link: '/guide/what-is-oat', activeMatch: '\\/guide(?:\\/|$)' },
+      { text: 'Reference', link: '/reference/zone-file', activeMatch: '\\/reference(?:\\/|$)' }
     ],
 
     footer: {
@@ -21,8 +21,16 @@ export default defineConfig({
         {
           text: 'Guides',
           items: [
+            { text: 'What is OAT?', link: '/guide/what-is-oat' },
             { text: 'Getting started', link: '/guide/getting-started' },
-            { text: 'Second guide', link: '/guide/second-guide' }
+            { text: 'Using the tools', link: '/guide/using-the-tools' }
+          ]
+        },
+        {
+          text: 'OAT Concepts',
+          items: [
+            { text: 'Folder structure', link: '/guide/folder-structure' },
+            { text: 'OAT components', link: '/guide/components' }
           ]
         }
       ],
@@ -30,8 +38,8 @@ export default defineConfig({
         {
           text: 'Reference',
           items: [
-            { text: 'Menus', link: '/reference/menu' },
-            { text: 'Zone Files', link: '/reference/zone-file' }
+            { text: 'Zone Files', link: '/reference/zone-file' },
+            { text: 'The IPak file format', link: '/reference/ipak-file-format' }
           ]
         }
       ]
