@@ -29,4 +29,4 @@ It can also load existing zones and reuse their assets from in-memory.
 Only a subset of assets can be read from disk however, depending on the game.
 
 Additionally, there are a couple of libraries and tools.
-A full list of the subcomponents can be found [here](./docs/OatComponents.md).
+A full list of the subcomponents can be found [here](./components).
