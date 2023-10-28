@@ -58,7 +58,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/Laupetin/oat-docs" },
+      { icon: "github", link: "https://github.com/Laupetin/openassettools" },
     ],
   },
 });
