@@ -11,9 +11,10 @@ Metadata has its line begin with the `>` character followed by the metadata-key,
 An entry follows the same schema just without the `>` prefix.
 
 For example:
+
 ```
 // This is a line comment
-/* 
+/*
     This is a block comment
 */
 
@@ -42,13 +43,13 @@ The `game` metadata sets the game the project is for.
 This metadata **must** be specified for a project to be linked.
 
 The following values can be used to specify the game.
-| Value | Game                           |
+| Value | Game |
 | ----- | ------------------------------ |
-| IW3   | Call Of Duty: Modern Warfare   |
-| IW4   | Call Of Duty: Modern Warfare 2 |
-| IW5   | Call Of Duty: Modern Warfare 3 |
-| T5    | Call Of Duty: Black Ops        |
-| T6    | Call Of Duty: Black Ops 2      |
+| IW3 | Call Of Duty: Modern Warfare |
+| IW4 | Call Of Duty: Modern Warfare 2 |
+| IW5 | Call Of Duty: Modern Warfare 3 |
+| T5 | Call Of Duty: Black Ops |
+| T6 | Call Of Duty: Black Ops 2 |
 
 ### `name` Metadata
 

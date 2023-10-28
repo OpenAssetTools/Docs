@@ -66,11 +66,11 @@ This component contains code that is shared between other Obj based and Zone bas
 
 ### Crypto
 
-This component contains wrappers around used crypto and hashing third party libraries. 
+This component contains wrappers around used crypto and hashing third party libraries.
 
 ### ObjCommon
 
-This component contains code that is used for both loading and writing asset data from and to disk. 
+This component contains code that is used for both loading and writing asset data from and to disk.
 
 ### ObjLoading
 
@@ -103,7 +103,7 @@ Can be used as a static lib.
 
 ### ZoneCommon
 
-This component bundles code for both loading and writing from/to fastfiles. 
+This component bundles code for both loading and writing from/to fastfiles.
 
 ### ZoneLoading
 

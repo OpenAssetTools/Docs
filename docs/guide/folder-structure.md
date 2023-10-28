@@ -36,7 +36,7 @@ Gdts can be referenced inside a zone definition file to be used inside a zone.
 
 ## zone_dump
 
-Contains all data dumped using Unlinker which includes raw assets in ``zone_raw``, zone definitions in ``zone_source`` and gdts in ``source_data``.
+Contains all data dumped using Unlinker which includes raw assets in `zone_raw`, zone definitions in `zone_source` and gdts in `source_data`.
 
 Separating the data of dumped files serves the purpose of separating it from manually created zones and prevents accidentally overwriting self created data.
 
@@ -48,10 +48,10 @@ The folder that contains the output of the linking process.
 
 Contains raw assets that should only be used for a zone with the same name as its subfolder.
 Any contents must be inside appropriately named subfolders.
-So assets for a zone called ``my_mod`` must be in ``zone_raw/my_mod``.
+So assets for a zone called `my_mod` must be in `zone_raw/my_mod`.
 
 ## zone_source
 
 A folder containing all zone definition files.
 Any definition file must have the name of the zone it describes.
-So if you want to create a zone with the name ``my_mod`` you need to describe it inside a zone definition with the path ``zone_source/my_mod.zone``.
+So if you want to create a zone with the name `my_mod` you need to describe it inside a zone definition with the path `zone_source/my_mod.zone`.

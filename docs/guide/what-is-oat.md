@@ -10,7 +10,7 @@ It currently offers support for the PC versions of:
 - [IW4 (Modern Warfare 2 - 2009)](https://en.wikipedia.org/wiki/Call_of_Duty:_Modern_Warfare_2)
 - [IW5 (Modern Warfare 3 - 2011)](https://en.wikipedia.org/wiki/Call_of_Duty:_Modern_Warfare_3)
 - [T5 (Black Ops - 2010)](https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops)
-- [T6 (Black Ops II - 2012)](https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops_II) 
+- [T6 (Black Ops II - 2012)](https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops_II)
 
 with very varying progress on the different games.
 
@@ -29,4 +29,4 @@ It can also load existing zones and reuse their assets from in-memory.
 Only a subset of assets can be read from disk however, depending on the game.
 
 Additionally, there are a couple of libraries and tools.
-A full list of the subcomponents can be found [here](./docs/OatComponents.md). 
+A full list of the subcomponents can be found [here](./docs/OatComponents.md).

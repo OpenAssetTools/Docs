@@ -6,6 +6,7 @@ A good starting point is dumping an existing zone from your game installation to
 The `Unlinker` tool will create a dump of a fastfile that can be linked again in the same form with the `Linker` tool.
 
 The `Unlinker` tool can be used the following:
+
 ```shell
 # Load the original zone from the game folder.
 # Change this if you have installed your game somewhere else

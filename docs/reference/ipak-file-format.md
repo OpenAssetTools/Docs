@@ -38,7 +38,6 @@ Afterwards follows a detailed description over the different parts.
 
 ![](./img/IPakFormat.png)
 
-
 ### Chunks
 
 All data including the file header within IPaks are part of a chunk.
@@ -97,8 +96,8 @@ The `type` field contains the type of the section.
 Depending on its value, the section is used for its appropriate purpose.
 The game does know two section types, any sections with unknown types are ignored:
 
-* `1` -> Index section
-* `2` -> Data section
+- `1` -> Index section
+- `2` -> Data section
 
 The `offset` field contains the file offset at which the section is located.
 
@@ -146,11 +145,11 @@ If it could otherwise exceed this point it must terminate early, meaning having 
 
 A block starts with a header which is `128` bytes big:
 
-| Name         | Size         |
-| ------------ | ------------ |
-| offset       | 3 bytes      |
-| count        | 1 byte       |
-| commands[31] | 31 * 4 bytes |
+| Name         | Size          |
+| ------------ | ------------- |
+| offset       | 3 bytes       |
+| count        | 1 byte        |
+| commands[31] | 31 \* 4 bytes |
 
 The `offset` field contains the offset inside the resulting file of the data that can be read from the block.
 Meaning the first block for an image file should be the offset `0`.
