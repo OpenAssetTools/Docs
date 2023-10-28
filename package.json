@@ -6,7 +6,7 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "format": "prettier --write \"./**.{md,mjs,js,vue,json,css}\""
+    "format": "prettier --write \"./**.{md,mjs,js,vue,json,css,yml,yaml}\""
   },
   "devDependencies": {
     "prettier": "^3.0.3",
