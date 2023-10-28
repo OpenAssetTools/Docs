@@ -37,7 +37,7 @@ The template allows the definition of variants in the form of properties that ca
 For each resulting cartesian product of these properties a file is generated unless skipped.
 
 This is used for generating raw files for the shader pipeline.
-An example of a template files can be found [here (particle_cloud.techset.template)](../raw/iw4/techsets/particle_cloud.techset.template).
+An example of a template files can be found [here (particle_cloud.techset.template)](https://github.com/Laupetin/OpenAssetTools/blob/main/raw/iw4/techsets/particle_cloud.techset.template).
 
 ### ZoneCodeGenerator
 
@@ -54,7 +54,7 @@ The commands file describes further information necessary for code generation th
 The parsing of the c header file and the commands file is implemented using the Parser component.
 The format of the commands file is entirely custom to OAT.
 
-An example of a commands file can be found [here (IW4_Commands.txt)](../src/ZoneCode/Game/IW4/IW4_Commands.txt)
+An example of a commands file can be found [here (IW4_Commands.txt)](https://github.com/Laupetin/OpenAssetTools/blob/main/src/ZoneCode/Game/IW4/IW4_Commands.txt)
 
 ## Shared components
 

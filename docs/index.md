@@ -12,7 +12,7 @@ hero:
       link: /guide/what-is-oat
     - theme: alt
       text: Asset Reference
-      link: /reference
+      link: /reference/zone-file
 
 features:
   - title: "Call Of Duty 4: Modern Warfare (2007)"
