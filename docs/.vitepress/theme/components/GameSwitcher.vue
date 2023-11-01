@@ -1,5 +1,5 @@
 <script setup>
-import { watchEffect } from "vue";
+import { computed, watchEffect } from "vue";
 import {
   inBrowser,
   selectedGameKey,
@@ -31,10 +31,26 @@ const GameInformation = {
   },
 };
 
+/**
+ * @type {Object}
+ * @property {String[]} games
+ */
+const props = defineProps({
+  games: {
+    type: /** @type {PropType<String[]>} */ Array,
+    default: null,
+  },
+});
+
+const games = computed(() => props.games || Object.keys(Game));
+const currentGameIndex = computed(() =>
+  Math.max(games.value.indexOf(selectedGame.value), 0)
+);
+const currentGame = computed(() => games.value[currentGameIndex.value]);
+
 function nextGame() {
-  const games = Object.keys(Game);
-  const currentIndex = Math.max(games.indexOf(selectedGame.value), 0);
-  const nextGame = games[(currentIndex + 1) % games.length];
+  const nextGame =
+    games.value[(currentGameIndex.value + 1) % games.value.length];
 
   setValueToLocalStorage(selectedGameKey, nextGame);
   selectedGame.value = nextGame;
@@ -47,10 +63,10 @@ watchEffect(() => {
 
   document.documentElement.classList.remove(
     ...Object.values(Game)
-      .filter((game) => game !== selectedGame.value)
+      .filter((game) => game !== currentGame.value)
       .map((game) => `selected-game-${game}`)
   );
-  document.documentElement.classList.add(`selected-game-${selectedGame.value}`);
+  document.documentElement.classList.add(`selected-game-${currentGame.value}`);
 });
 </script>
 
@@ -58,8 +74,8 @@ watchEffect(() => {
   <div class="game-switcher">
     <span class="game-label">Game</span>
     <div class="game" @click="nextGame">
-      <img :src="GameInformation[selectedGame].icon" />
-      <span>{{ GameInformation[selectedGame].name }}</span>
+      <img :src="GameInformation[currentGame].icon" />
+      <span>{{ GameInformation[currentGame].name }}</span>
     </div>
   </div>
 </template>
