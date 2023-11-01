@@ -14,7 +14,7 @@ hero:
       link: /guide/what-is-oat
     - theme: alt
       text: Asset Reference
-      link: /reference/zone-file
+      link: /asset/overview
 
 features:
   - title: 🔧 Create custom assets

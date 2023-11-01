@@ -83,10 +83,6 @@ export default defineConfig({
                 { text: "Event Handlers", link: "/asset/menu/event-handlers" },
               ],
             },
-            {
-              text: "The IPak file format",
-              link: "/reference/ipak-file-format",
-            },
           ],
         },
       ],
