@@ -70,6 +70,10 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: "Structure", link: "/asset/menu/structure" },
+                {
+                  text: "Menu File Elements",
+                  link: "/asset/menu/menu-elements",
+                },
                 { text: "Preprocessor", link: "/asset/menu/preprocessor" },
                 {
                   text: "Menu Properties",

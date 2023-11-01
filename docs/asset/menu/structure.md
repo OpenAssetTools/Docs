@@ -9,9 +9,7 @@ You can find a writeup about its structure and features [here](https://icculus.o
 The system used in CoD game is based on this original system but was continually modified and extended with any title.
 Therefore depending on the CoD title the features of menus file vary.
 
-## File types
-
-### Menu Lists {#menu-lists}
+## Menu Lists {#menu-lists}
 
 The games bundle menus in what is called **Menu Lists**.
 It's nothing other than just a collection of menus.
@@ -22,7 +20,7 @@ Similarly IW4, for example also uses `ui/ingame.txt` but also menu lists like `u
 
 Other than that, menu lists are do the same thing as `.menu` files.
 In fact you sometimes see the CoD games load `.menu` files as menu lists as well.
-Convention however is that menu lists only load `.menu` files with [`loadMenu`](#loading-menus) however.
+Convention however is that menu lists only load `.menu` files with [`loadMenu`](/asset/menu/menu-elements#loading-menus) however.
 
 Since ingame menus can only be used when loaded, and the game only loads menu lists, any menu has to be part of a menu list that is somewhen loaded to be able to be used.
 
@@ -51,20 +49,47 @@ Example of a menu list:
 }
 ```
 
-### Menu files {#menu-files}
+## Menu files {#menu-files}
 
-## Menu file elements
+Menu files have the extension `.menu` and hold data for one or multiple menus.
+They can be loaded from any other menu list or menu file with [`loadMenu`](/asset/menu/menu-elements#loading-menus).
 
-### Loading other menus {#loading-menus}
+Example of a menu file:
 
-### Function Definitions {#functions}
-
-### Menu Definitions {#menu-definitions}
-
-### Item Definitions {#item-definitions}
-
-### Properties
-
-- values
-- expression
-- event handler
+```
+{
+    menuDef
+    {
+        name                        "connect"
+        rect                        0 0 640 480 0 0
+        style                       1
+        focuscolor                  1 1 1 1
+        onOpen
+        {
+            exec "selectStringTableEntryInDvar mp/didyouknow.csv 0 didyouknow";
+        }
+        itemDef
+        {
+            rect                        -426.667 -240 853.333 480 2 2
+            style                       3
+            decoration
+            visible                     1
+            textscale                   0.55
+            background                  "$levelbriefing"
+        }
+        itemDef
+        {
+            rect                        0 0 0 26 3 1
+            decoration
+            visible                     1
+            textalign                   6
+            textalignx                  -8
+            textscale                   0.5833
+            textstyle                   3
+            textfont                    9
+            forecolor                   1 0.8 0.4 1
+            exp text                    gametypename();
+        }
+    }
+}
+```
