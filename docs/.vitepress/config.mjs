@@ -45,7 +45,7 @@ export default defineConfig({
       ],
       "/reference": [
         {
-          text: "Reference",
+          text: "OAT Reference",
           items: [
             { text: "Zone Files", link: "/reference/zone-file" },
             {
@@ -53,6 +53,10 @@ export default defineConfig({
               link: "/reference/ipak-file-format",
             },
           ],
+        },
+        {
+          text: "Game Assets",
+          items: [{ text: "Menu files", link: "/reference/menu" }],
         },
       ],
     },
