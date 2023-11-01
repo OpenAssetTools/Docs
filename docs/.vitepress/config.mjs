@@ -6,6 +6,9 @@ export default defineConfig({
   head: [["link", { rel: "icon", href: "/logo_64_64.png" }]],
   themeConfig: {
     logo: "/logo_64_64.png",
+    outline: {
+      level: "deep",
+    },
     nav: [
       { text: "Home", link: "/" },
       {
@@ -67,13 +70,10 @@ export default defineConfig({
             { text: "Overview", link: "/asset/overview" },
             {
               text: "Menus",
-              collapsed: false,
+              collapsed: true,
+              link: "/asset/menu/",
               items: [
                 { text: "Structure", link: "/asset/menu/structure" },
-                {
-                  text: "Menu File Elements",
-                  link: "/asset/menu/menu-elements",
-                },
                 { text: "Preprocessor", link: "/asset/menu/preprocessor" },
                 {
                   text: "Menu Properties",
