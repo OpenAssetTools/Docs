@@ -18,6 +18,11 @@ export default defineConfig({
         link: "/reference/zone-file",
         activeMatch: "\\/reference(?:\\/|$)",
       },
+      {
+        text: "Game Assets",
+        link: "/asset/overview",
+        activeMatch: "\\/asset(?:\\/|$)",
+      },
     ],
 
     footer: {
@@ -54,9 +59,35 @@ export default defineConfig({
             },
           ],
         },
+      ],
+      "/asset": [
         {
           text: "Game Assets",
-          items: [{ text: "Menu files", link: "/reference/menu" }],
+          items: [
+            { text: "Overview", link: "/asset/overview" },
+            {
+              text: "Menus",
+              collapsed: false,
+              items: [
+                { text: "Structure", link: "/asset/menu/structure" },
+                { text: "Preprocessor", link: "/asset/menu/preprocessor" },
+                {
+                  text: "Menu Properties",
+                  link: "/asset/menu/menu-properties",
+                },
+                {
+                  text: "Item Properties",
+                  link: "/asset/menu/item-properties",
+                },
+                { text: "Expressions", link: "/asset/menu/expressions" },
+                { text: "Event Handlers", link: "/asset/menu/event-handlers" },
+              ],
+            },
+            {
+              text: "The IPak file format",
+              link: "/reference/ipak-file-format",
+            },
+          ],
         },
       ],
     },
