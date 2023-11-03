@@ -249,6 +249,36 @@ Calling a function does not need to be the entirety of an expression:
 
 ### Properties
 
-- values
-- expression
-- event handler
+Menus and items have properties.
+These are key-value pairs giving a certain property identified by its name a respective value.
+Different properties take different types of values.
+The most common types of values are:
+
+- Literal values: For example a string or a number.
+- [Expressions](/asset/menu/expressions): Can make use of functions and is evaluated to a literal value at runtime when displaying the menu.
+- [Event Handlers](/asset/menu/event-handlers): A small script that specifies some code to execute upon triggering an event.
+
+In rarer cases a property can also have a more complicated syntax.
+The available properties for [menus](/asset/menu/menu-properties) and [items](/asset/menu/item-properties) are documented in their respective pages.
+
+Example:
+
+```txt{4-15}
+{
+    menuDef
+    {
+        // name property taking a literal value
+        name "TestMenu"
+
+        // visible property taking an expression
+        visible when(dvarbool(ui_isTesting));
+
+        // onOpen property taking an event handler
+        onOpen
+        {
+            open test_popup;
+            setDvar ui_testMenuOpen 1;
+        }
+    }
+}
+```
