@@ -60,6 +60,10 @@ export default defineConfig({
               text: "The IPak file format",
               link: "/reference/ipak-file-format",
             },
+            {
+              text: "Preprocessor features",
+              link: "/reference/preprocessor-features",
+            },
           ],
         },
       ],
