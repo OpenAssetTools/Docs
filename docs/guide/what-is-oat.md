@@ -3,7 +3,7 @@
 OpenAssetTools (OAT) is a work in progress project aiming to create a modding tools suite for older Call Of Duty titles.
 It is not a reimplementation of existing modding tools or related to them but aims to be as compatible as possible in terms of formats and add support for previously unsupported titles.
 
-In its current form it is still incaomplete and only offers a small subset of modding features.
+In its current form it is still incomplete and only offers a small subset of modding features.
 It currently offers support for the PC versions of:
 
 - [IW3 (COD4: Modern Warfare - 2007)](https://en.wikipedia.org/wiki/Call_of_Duty_4:_Modern_Warfare)

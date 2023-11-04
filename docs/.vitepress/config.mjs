@@ -6,6 +6,9 @@ export default defineConfig({
   head: [["link", { rel: "icon", href: "/logo_64_64.png" }]],
   themeConfig: {
     logo: "/logo_64_64.png",
+    outline: {
+      level: "deep",
+    },
     nav: [
       { text: "Home", link: "/" },
       {
@@ -17,6 +20,11 @@ export default defineConfig({
         text: "Reference",
         link: "/reference/zone-file",
         activeMatch: "\\/reference(?:\\/|$)",
+      },
+      {
+        text: "Game Assets",
+        link: "/asset/overview",
+        activeMatch: "\\/asset(?:\\/|$)",
       },
     ],
 
@@ -45,12 +53,43 @@ export default defineConfig({
       ],
       "/reference": [
         {
-          text: "Reference",
+          text: "OAT Reference",
           items: [
             { text: "Zone Files", link: "/reference/zone-file" },
             {
               text: "The IPak file format",
               link: "/reference/ipak-file-format",
+            },
+            {
+              text: "Preprocessor features",
+              link: "/reference/preprocessor-features",
+            },
+          ],
+        },
+      ],
+      "/asset": [
+        {
+          text: "Game Assets",
+          items: [
+            { text: "Overview", link: "/asset/overview" },
+            {
+              text: "Menus",
+              collapsed: true,
+              link: "/asset/menu/",
+              items: [
+                { text: "Structure", link: "/asset/menu/structure" },
+                { text: "Preprocessor", link: "/asset/menu/preprocessor" },
+                {
+                  text: "Menu Properties",
+                  link: "/asset/menu/menu-properties",
+                },
+                {
+                  text: "Item Properties",
+                  link: "/asset/menu/item-properties",
+                },
+                { text: "Expressions", link: "/asset/menu/expressions" },
+                { text: "Event Handlers", link: "/asset/menu/event-handlers" },
+              ],
             },
           ],
         },
