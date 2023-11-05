@@ -44,7 +44,7 @@ const props = defineProps({
 
 const games = computed(() => props.games || Object.keys(Game));
 const currentGameIndex = computed(() =>
-  Math.max(games.value.indexOf(selectedGame.value), 0)
+  Math.max(games.value.indexOf(selectedGame.value), 0),
 );
 const currentGame = computed(() => games.value[currentGameIndex.value]);
 
@@ -64,7 +64,7 @@ watchEffect(() => {
   document.documentElement.classList.remove(
     ...Object.values(Game)
       .filter((game) => game !== currentGame.value)
-      .map((game) => `selected-game-${game}`)
+      .map((game) => `selected-game-${game}`),
   );
   document.documentElement.classList.add(`selected-game-${currentGame.value}`);
 });

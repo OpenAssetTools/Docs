@@ -6,10 +6,12 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "format": "prettier --write \"./**.{md,mjs,js,vue,json,css,yml,yaml}\""
+    "format": "prettier --write \"./**.{md,mjs,js,vue,json,css,yml,yaml}\"",
+    "format:check": "prettier --check \"./**.{md,mjs,js,vue,json,css,yml,yaml}\""
   },
   "devDependencies": {
     "prettier": "^3.0.3",
+    "slugify": "^1.6.6",
     "vitepress": "^1.0.0-rc.24",
     "vue": "^3.3.7"
   }

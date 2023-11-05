@@ -14,7 +14,7 @@ export const inBrowser = typeof window !== "undefined";
 export function getValueFromLocalStorage(
   key,
   defaultValue,
-  valueIsValidFunc = null
+  valueIsValidFunc = null,
 ) {
   if (!inBrowser) {
     return defaultValue;
@@ -62,6 +62,6 @@ export const selectedGame = ref(
   getValueFromLocalStorage(
     selectedGameKey,
     Game.iw4,
-    (value) => Object.values(Game).indexOf(value) >= 0
-  )
+    (value) => Object.values(Game).indexOf(value) >= 0,
+  ),
 );
