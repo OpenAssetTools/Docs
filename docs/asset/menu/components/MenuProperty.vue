@@ -49,7 +49,7 @@ const gameClasses = computed(() => {
 const slug = computed(() => slugify(props.name));
 
 const usageString = computed(() =>
-  props.usage ? `${props.name} ${props.usage}` : props.name
+  props.usage ? `${props.name} ${props.usage}` : props.name,
 );
 </script>
 
