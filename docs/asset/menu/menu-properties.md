@@ -1,7 +1,7 @@
 <script setup>
 import GameSwitcher from '@theme/components/GameSwitcher.vue';
 import { Game, selectedGame } from '@theme/components/preferences';
-import MenuProperty from './components/MenuProperty.md';
+import MenuProperty from './components/MenuProperty.vue';
 import PropertyParameterList from './components/PropertyParameterList.vue';
 import PropertyParameter from './components/PropertyParameter.vue';
 import MenuPropertyExample from './components/MenuPropertyExample.md';

@@ -5,8 +5,8 @@ defineProps({
     required: true,
   },
   description: {
-    type: String,
-    required: true,
+    type: [String, null],
+    default: "",
   },
   type: {
     type: [String, null],
@@ -23,17 +23,6 @@ defineProps({
       >&nbsp;<badge type="info">{{ type }}</badge>
     </template>
 
-    <span>&nbsp;{{ description }}</span>
+    <span v-if="description">&nbsp;{{ description }}</span>
   </li>
 </template>
-
-<style module>
-badge {
-  margin-left: 2px;
-}
-
-span {
-  margin-left: 2px;
-}
-</style>
-<!-- - _{{ name }}_ <badge v-if="type">{{type}}</badge> {{ description }} -->
