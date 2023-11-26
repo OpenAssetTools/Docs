@@ -685,7 +685,7 @@ Unknown.
 </MenuProperty>
 
 <!-- allowedBinding -->
-<MenuProperty name="allowedBinding" usage="<blurAmount>">
+<MenuProperty name="allowedBinding" usage="<binding>">
 <PropertyParameterList>
     <PropertyParameter name="binding" type="String" />
 </PropertyParameterList>
