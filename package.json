@@ -10,7 +10,7 @@
     "format:check": "prettier --check \"./**.{md,mjs,js,vue,json,css,yml,yaml}\""
   },
   "devDependencies": {
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "slugify": "^1.6.6",
     "vitepress": "^1.0.0-rc.42",
     "vue": "^3.4.18"
