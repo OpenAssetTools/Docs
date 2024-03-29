@@ -97,11 +97,11 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: "https://github.com/laupetin/oat-docs/edit/main/docs/:path",
+      pattern: "https://github.com/OpenAssetTools/Docs/edit/main/docs/:path",
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/Laupetin/openassettools" },
+      { icon: "github", link: "https://github.com/Laupetin/OpenAssetTools" },
     ],
   },
 });
