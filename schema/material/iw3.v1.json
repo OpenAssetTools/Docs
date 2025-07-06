@@ -1,0 +1,405 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://openassettools.dev/schema/material/iw3.v1.json",
+  "type": "object",
+  "required": [
+    "_game",
+    "_version",
+    "sortKey",
+    "surfaceTypeBits",
+    "stateBitsEntry",
+    "stateFlags",
+    "cameraRegion",
+    "techniqueSet"
+  ],
+  "properties": {
+    "_game": {
+      "const": "iw3"
+    },
+    "_version": {
+      "const": 1
+    },
+    "gameFlags": {
+      "type": "array",
+      "items": {
+        "enum": ["1", "2", "4", "8", "10", "20", "CASTS_SHADOW", "40", "80"]
+      }
+    },
+    "sortKey": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "textureAtlas": {
+      "$ref": "#/definitions/TextureAtlas"
+    },
+    "surfaceTypeBits": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "stateBitsEntry": {
+      "type": "array",
+      "minItems": 34,
+      "maxItems": 34,
+      "items": {
+        "type": "integer",
+        "minimum": -1,
+        "maximum": 127
+      }
+    },
+    "stateFlags": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cameraRegion": {
+      "enum": ["lit", "decal", "emissive", "none"]
+    },
+    "techniqueSet": {
+      "type": "string"
+    },
+    "textures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Texture"
+      }
+    },
+    "constants": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Constant"
+      }
+    },
+    "stateBits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/StateBitsTableEntry"
+      }
+    }
+  },
+  "definitions": {
+    "TextureAtlas": {
+      "type": "object",
+      "required": ["rows", "columns"],
+      "properties": {
+        "rows": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "columns": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        }
+      }
+    },
+    "Texture": {
+      "type": "object",
+      "oneOf": [
+        {
+          "required": ["name"],
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "required": ["nameHash", "nameStart", "nameEnd"],
+          "properties": {
+            "nameHash": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "nameStart": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1
+            },
+            "nameEnd": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1
+            }
+          }
+        }
+      ],
+      "required": ["semantic", "samplerState", "image"],
+      "properties": {
+        "semantic": {
+          "enum": [
+            "2D",
+            "function",
+            "colorMap",
+            "unused1",
+            "unused2",
+            "normalMap",
+            "unused3",
+            "unused4",
+            "specularMap",
+            "unused5",
+            "unused6",
+            "waterMap"
+          ]
+        },
+        "samplerState": {
+          "$ref": "#/definitions/SamplerState"
+        },
+        "image": {
+          "type": "string"
+        },
+        "water": {
+          "$ref": "#/definitions/Water"
+        }
+      }
+    },
+    "SamplerState": {
+      "type": "object",
+      "required": ["filter", "mipMap", "clampU", "clampV", "clampW"],
+      "properties": {
+        "filter": {
+          "enum": ["disabled", "nearest", "linear", "aniso2x", "aniso4x"]
+        },
+        "mipMap": {
+          "enum": ["disabled", "nearest", "linear"]
+        },
+        "clampU": {
+          "type": "boolean"
+        },
+        "clampV": {
+          "type": "boolean"
+        },
+        "clampW": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Water": {
+      "type": "object",
+      "required": [
+        "floatTime",
+        "m",
+        "n",
+        "h0",
+        "wTerm",
+        "lx",
+        "lz",
+        "gravity",
+        "windvel",
+        "winddir",
+        "amplitude",
+        "codeConstant"
+      ],
+      "properties": {
+        "floatTime": {
+          "type": "number"
+        },
+        "m": {
+          "type": "integer"
+        },
+        "n": {
+          "type": "integer"
+        },
+        "h0": {
+          "type": "string"
+        },
+        "wTerm": {
+          "type": "string"
+        },
+        "lx": {
+          "type": "number"
+        },
+        "lz": {
+          "type": "number"
+        },
+        "gravity": {
+          "type": "number"
+        },
+        "windvel": {
+          "type": "number"
+        },
+        "winddir": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "amplitude": {
+          "type": "number"
+        },
+        "codeConstant": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "Constant": {
+      "type": "object",
+      "oneOf": [
+        {
+          "required": ["name"],
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "required": ["nameFragment", "nameHash"],
+          "properties": {
+            "nameHash": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "nameFragment": {
+              "type": "string",
+              "maxLength": 12
+            }
+          }
+        }
+      ],
+      "required": ["literal"],
+      "properties": {
+        "literal": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "StateBitsTableEntry": {
+      "type": "object",
+      "required": [
+        "srcBlendRgb",
+        "dstBlendRgb",
+        "blendOpRgb",
+        "alphaTest",
+        "cullFace",
+        "srcBlendAlpha",
+        "dstBlendAlpha",
+        "blendOpAlpha",
+        "colorWriteRgb",
+        "colorWriteAlpha",
+        "polymodeLine",
+        "depthWrite",
+        "depthTest",
+        "polygonOffset"
+      ],
+      "properties": {
+        "srcBlendRgb": {
+          "$ref": "#/definitions/GfxBlend"
+        },
+        "dstBlendRgb": {
+          "$ref": "#/definitions/GfxBlend"
+        },
+        "blendOpRgb": {
+          "$ref": "#/definitions/GfxBlendOp"
+        },
+        "alphaTest": {
+          "enum": ["disabled", "gt0", "lt128", "ge128"]
+        },
+        "cullFace": {
+          "enum": ["none", "back", "front"]
+        },
+        "srcBlendAlpha": {
+          "$ref": "#/definitions/GfxBlend"
+        },
+        "dstBlendAlpha": {
+          "$ref": "#/definitions/GfxBlend"
+        },
+        "blendOpAlpha": {
+          "$ref": "#/definitions/GfxBlendOp"
+        },
+        "colorWriteRgb": {
+          "type": "boolean"
+        },
+        "colorWriteAlpha": {
+          "type": "boolean"
+        },
+        "polymodeLine": {
+          "type": "boolean"
+        },
+        "depthWrite": {
+          "type": "boolean"
+        },
+        "depthTest": {
+          "enum": ["disabled", "always", "less", "equal", "less_equal"]
+        },
+        "polygonOffset": {
+          "enum": ["offset0", "offset1", "offset2", "offsetShadowmap"]
+        },
+        "stencilFront": {
+          "$ref": "#/definitions/Stencil"
+        },
+        "stencilBack": {
+          "$ref": "#/definitions/Stencil"
+        }
+      }
+    },
+    "GfxBlend": {
+      "enum": [
+        "disabled",
+        "zero",
+        "one",
+        "srccolor",
+        "invsrccolor",
+        "srcalpha",
+        "invsrcalpha",
+        "destalpha",
+        "invdestalpha",
+        "destcolor",
+        "invdestcolor"
+      ]
+    },
+    "GfxBlendOp": {
+      "enum": ["disabled", "add", "subtract", "revsubtract", "min", "max"]
+    },
+    "Stencil": {
+      "type": "object",
+      "required": ["pass", "fail", "zfail", "func"],
+      "properties": {
+        "pass": {
+          "$ref": "#/definitions/GfxStencilOp"
+        },
+        "fail": {
+          "$ref": "#/definitions/GfxStencilOp"
+        },
+        "zfail": {
+          "$ref": "#/definitions/GfxStencilOp"
+        },
+        "func": {
+          "enum": [
+            "never",
+            "less",
+            "equal",
+            "lessequal",
+            "greater",
+            "notequal",
+            "greaterequal",
+            "always"
+          ]
+        }
+      }
+    },
+    "GfxStencilOp": {
+      "enum": [
+        "keep",
+        "zero",
+        "replace",
+        "incrsat",
+        "decrsat",
+        "invert",
+        "incr",
+        "decr"
+      ]
+    }
+  }
+}

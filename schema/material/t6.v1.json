@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://openassettools.dev/schema/material/t6.v1.json",
+  "type": "object",
+  "required": ["_game", "_version"],
+  "properties": {
+    "_game": {
+      "const": "t6"
+    },
+    "_version": {
+      "const": 1
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://openassettools.dev/schema/material.v1.json",
+  "title": "OpenAssetTools material json schema",
+  "type": "object",
+  "required": ["_game", "_type", "_version"],
+  "properties": {
+    "_game": {
+      "enum": ["iw3", "iw4", "iw5", "t5", "t6"]
+    },
+    "_type": {
+      "const": "material"
+    },
+    "_version": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "oneOf": [
+    { "$ref": "http://openassettools.dev/schema/material/iw3.v1.json" },
+    { "$ref": "http://openassettools.dev/schema/material/iw4.v1.json" },
+    { "$ref": "http://openassettools.dev/schema/material/iw5.v1.json" },
+    { "$ref": "http://openassettools.dev/schema/material/t5.v1.json" },
+    { "$ref": "http://openassettools.dev/schema/material/t6.v1.json" }
+  ]
+}
