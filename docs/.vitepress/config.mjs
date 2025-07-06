@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   title: "OpenAssetTools",
+  outDir: "../dist",
   description: "Documentation for and around OpenAssetTools",
   head: [["link", { rel: "icon", href: "/logo_64_64.png" }]],
   themeConfig: {
