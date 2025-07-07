@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://openassettools.dev/schema/material/common.v1.json",
+  "definitions": {
+    "TextureAtlas": {
+      "type": "object",
+      "required": ["rows", "columns"],
+      "properties": {
+        "rows": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "columns": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        }
+      }
+    },
+    "TextureName": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "TextureHash": {
+      "type": "object",
+      "required": ["nameHash", "nameStart", "nameEnd"],
+      "properties": {
+        "nameHash": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "nameStart": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1
+        },
+        "nameEnd": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1
+        }
+      }
+    },
+    "Water": {
+      "type": "object",
+      "required": [
+        "floatTime",
+        "m",
+        "n",
+        "h0",
+        "wTerm",
+        "lx",
+        "lz",
+        "gravity",
+        "windvel",
+        "winddir",
+        "amplitude",
+        "codeConstant"
+      ],
+      "properties": {
+        "floatTime": {
+          "type": "number"
+        },
+        "m": {
+          "type": "integer"
+        },
+        "n": {
+          "type": "integer"
+        },
+        "h0": {
+          "type": "string"
+        },
+        "wTerm": {
+          "type": "string"
+        },
+        "lx": {
+          "type": "number"
+        },
+        "lz": {
+          "type": "number"
+        },
+        "gravity": {
+          "type": "number"
+        },
+        "windvel": {
+          "type": "number"
+        },
+        "winddir": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "amplitude": {
+          "type": "number"
+        },
+        "codeConstant": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "Constant": {
+      "type": "object",
+      "oneOf": [
+        {
+          "required": ["name"],
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "required": ["nameFragment", "nameHash"],
+          "properties": {
+            "nameHash": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "nameFragment": {
+              "type": "string",
+              "maxLength": 12
+            }
+          }
+        }
+      ],
+      "required": ["literal"],
+      "properties": {
+        "literal": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
