@@ -2,13 +2,276 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://openassettools.dev/schema/material/iw5.v1.json",
   "type": "object",
-  "required": ["_game", "_version"],
+  "required": [
+    "_game",
+    "_version",
+    "sortKey",
+    "surfaceTypeBits",
+    "stateBitsEntry",
+    "stateFlags",
+    "cameraRegion",
+    "techniqueSet"
+  ],
   "properties": {
     "_game": {
       "const": "iw5"
     },
     "_version": {
       "const": 1
+    },
+    "gameFlags": {
+      "type": "array",
+      "items": {
+        "enum": ["1", "2", "4", "8", "10", "20", "40", "80"]
+      }
+    },
+    "sortKey": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "textureAtlas": {
+      "$ref": "http://openassettools.dev/schema/material/common.v1.json#/definitions/TextureAtlas"
+    },
+    "surfaceTypeBits": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "stateBitsEntry": {
+      "type": "array",
+      "minItems": 54,
+      "maxItems": 54,
+      "items": {
+        "type": "integer",
+        "minimum": -1,
+        "maximum": 127
+      }
+    },
+    "stateFlags": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cameraRegion": {
+      "enum": [
+        "litOpaque",
+        "litTrans",
+        "emissive",
+        "depthHack",
+        "lightMapOpaque",
+        "none"
+      ]
+    },
+    "techniqueSet": {
+      "type": "string"
+    },
+    "textures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Texture"
+      }
+    },
+    "constants": {
+      "type": "array",
+      "items": {
+        "$ref": "http://openassettools.dev/schema/material/common.v1.json#/definitions/Constant"
+      }
+    },
+    "stateBits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/StateBitsTableEntry"
+      }
+    }
+  },
+  "definitions": {
+    "Texture": {
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "http://openassettools.dev/schema/material/common.v1.json#/definitions/TextureName"
+        },
+        {
+          "$ref": "http://openassettools.dev/schema/material/common.v1.json#/definitions/TextureHash"
+        }
+      ],
+      "required": ["semantic", "samplerState", "image"],
+      "properties": {
+        "semantic": {
+          "enum": [
+            "2D",
+            "function",
+            "colorMap",
+            "detailMap",
+            "unused2",
+            "normalMap",
+            "unused3",
+            "unused4",
+            "specularMap",
+            "unused5",
+            "unused6",
+            "waterMap",
+            "displacementMap"
+          ]
+        },
+        "samplerState": {
+          "$ref": "#/definitions/SamplerState"
+        },
+        "image": {
+          "type": "string"
+        },
+        "water": {
+          "$ref": "http://openassettools.dev/schema/material/common.v1.json#/definitions/Water"
+        }
+      }
+    },
+    "SamplerState": {
+      "type": "object",
+      "required": ["filter", "mipMap", "clampU", "clampV", "clampW"],
+      "properties": {
+        "filter": {
+          "enum": ["disabled", "nearest", "linear", "aniso2x", "aniso4x"]
+        },
+        "mipMap": {
+          "enum": ["disabled", "nearest", "linear"]
+        },
+        "clampU": {
+          "type": "boolean"
+        },
+        "clampV": {
+          "type": "boolean"
+        },
+        "clampW": {
+          "type": "boolean"
+        }
+      }
+    },
+    "StateBitsTableEntry": {
+      "type": "object",
+      "required": [
+        "srcBlendRgb",
+        "dstBlendRgb",
+        "blendOpRgb",
+        "alphaTest",
+        "cullFace",
+        "srcBlendAlpha",
+        "dstBlendAlpha",
+        "blendOpAlpha",
+        "colorWriteRgb",
+        "colorWriteAlpha",
+        "polymodeLine",
+        "depthWrite",
+        "depthTest",
+        "polygonOffset"
+      ],
+      "properties": {
+        "srcBlendRgb": {
+          "$ref": "#/definitions/GfxBlend"
+        },
+        "dstBlendRgb": {
+          "$ref": "#/definitions/GfxBlend"
+        },
+        "blendOpRgb": {
+          "$ref": "#/definitions/GfxBlendOp"
+        },
+        "alphaTest": {
+          "enum": ["disabled", "gt0", "lt128", "ge128"]
+        },
+        "cullFace": {
+          "enum": ["none", "back", "front"]
+        },
+        "srcBlendAlpha": {
+          "$ref": "#/definitions/GfxBlend"
+        },
+        "dstBlendAlpha": {
+          "$ref": "#/definitions/GfxBlend"
+        },
+        "blendOpAlpha": {
+          "$ref": "#/definitions/GfxBlendOp"
+        },
+        "colorWriteRgb": {
+          "type": "boolean"
+        },
+        "colorWriteAlpha": {
+          "type": "boolean"
+        },
+        "gammaWrite": {
+          "type": "boolean"
+        },
+        "polymodeLine": {
+          "type": "boolean"
+        },
+        "depthWrite": {
+          "type": "boolean"
+        },
+        "depthTest": {
+          "enum": ["disabled", "always", "less", "equal", "less_equal"]
+        },
+        "polygonOffset": {
+          "enum": ["offset0", "offset1", "offset2", "offsetShadowmap"]
+        },
+        "stencilFront": {
+          "$ref": "#/definitions/Stencil"
+        },
+        "stencilBack": {
+          "$ref": "#/definitions/Stencil"
+        }
+      }
+    },
+    "GfxBlend": {
+      "enum": [
+        "disabled",
+        "zero",
+        "one",
+        "srccolor",
+        "invsrccolor",
+        "srcalpha",
+        "invsrcalpha",
+        "destalpha",
+        "invdestalpha",
+        "destcolor",
+        "invdestcolor"
+      ]
+    },
+    "GfxBlendOp": {
+      "enum": ["disabled", "add", "subtract", "revsubtract", "min", "max"]
+    },
+    "Stencil": {
+      "type": "object",
+      "required": ["pass", "fail", "zfail", "func"],
+      "properties": {
+        "pass": {
+          "$ref": "#/definitions/GfxStencilOp"
+        },
+        "fail": {
+          "$ref": "#/definitions/GfxStencilOp"
+        },
+        "zfail": {
+          "$ref": "#/definitions/GfxStencilOp"
+        },
+        "func": {
+          "enum": [
+            "never",
+            "less",
+            "equal",
+            "lessequal",
+            "greater",
+            "notequal",
+            "greaterequal",
+            "always"
+          ]
+        }
+      }
+    },
+    "GfxStencilOp": {
+      "enum": [
+        "keep",
+        "zero",
+        "replace",
+        "incrsat",
+        "decrsat",
+        "invert",
+        "incr",
+        "decr"
+      ]
     }
   }
 }
