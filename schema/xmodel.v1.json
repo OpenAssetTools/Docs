@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://openassettools.dev/schema/xmodel.v1.json",
+  "title": "OpenAssetTools xmodel json schema",
+  "type": "object",
+  "required": ["_game", "_type", "_version"],
+  "properties": {
+    "_game": {
+      "enum": ["iw3", "iw4", "iw5", "t5", "t6"]
+    },
+    "_type": {
+      "const": "xmodel"
+    },
+    "_version": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "oneOf": [
+    { "$ref": "http://openassettools.dev/schema/xmodel/iw3.v1.json" },
+    { "$ref": "http://openassettools.dev/schema/xmodel/iw4.v1.json" },
+    { "$ref": "http://openassettools.dev/schema/xmodel/iw5.v1.json" },
+    { "$ref": "http://openassettools.dev/schema/xmodel/t5.v1.json" },
+    { "$ref": "http://openassettools.dev/schema/xmodel/t6.v1.json" }
+  ]
+}

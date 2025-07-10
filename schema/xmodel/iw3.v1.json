@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://openassettools.dev/schema/xmodel/iw3.v1.json",
+  "type": "object",
+  "required": [
+    "_game",
+    "_version",
+    "lods",
+    "flags"
+  ],
+  "properties": {
+    "_game": {
+      "const": "iw3"
+    },
+    "_version": {
+      "const": 1
+    },
+    "lods": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/definitions/XModelLod"
+      }
+    },
+    "collLod": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "physPreset": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "XModelLod": {
+      "type": "object",
+      "required": ["file", "distance"],
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "distance": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
