@@ -15,6 +15,13 @@
     "_version": {
       "const": 1
     },
+    "type": {
+      "enum": [
+        "rigid",
+        "animated",
+        "viewhands"
+      ]
+    },
     "lods": {
       "type": "array",
       "minItems": 1,
