@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://openassettools.dev/schema/font-icon/t6.v1.json",
+  "type": "object",
+  "required": ["_game", "_version"],
+  "properties": {
+    "_game": {
+      "const": "t6"
+    },
+    "_version": {
+      "const": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/FontIconEntry"
+      }
+    }
+  },
+  "definitions": {
+    "FontIconEntry": {
+      "type": "object",
+      "required": ["name", "material", "size"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "material": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "scale": {
+          "$ref": "#/definitions/Vec2"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "aliasHashes": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "Vec2": {
+      "type": "object",
+      "required": ["x", "y"],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
