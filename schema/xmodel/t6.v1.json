@@ -18,11 +18,7 @@
       "const": 1
     },
     "type": {
-      "enum": [
-        "rigid",
-        "animated",
-        "viewhands"
-      ]
+      "enum": ["rigid", "animated", "viewhands"]
     },
     "lods": {
       "type": "array",
@@ -53,10 +49,7 @@
   "definitions": {
     "XModelLod": {
       "type": "object",
-      "required": [
-        "file",
-        "distance"
-      ],
+      "required": ["file", "distance"],
       "properties": {
         "file": {
           "type": "string"
@@ -68,11 +61,7 @@
     },
     "Vec3": {
       "type": "object",
-      "required": [
-        "x",
-        "y",
-        "z"
-      ],
+      "required": ["x", "y", "z"],
       "properties": {
         "x": {
           "type": "number"

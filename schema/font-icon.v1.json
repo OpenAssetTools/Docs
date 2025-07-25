@@ -16,7 +16,5 @@
       "minimum": 1
     }
   },
-  "oneOf": [
-    { "$ref": "http://openassettools.dev/schema/font-icon/t6.v1.json" }
-  ]
+  "oneOf": [{ "$ref": "http://openassettools.dev/schema/font-icon/t6.v1.json" }]
 }
