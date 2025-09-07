@@ -15,7 +15,9 @@
       "const": "t6"
     },
     "_version": {
-      "const": 1
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2
     },
     "type": {
       "enum": ["rigid", "animated", "viewhands"]
