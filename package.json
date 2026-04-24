@@ -2,6 +2,7 @@
   "name": "oat-docs",
   "version": "1.0.0",
   "description": "Documentation for and around OpenAssetTools",
+  "private": "true",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
