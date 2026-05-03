@@ -28,6 +28,10 @@
       "minimum": 0,
       "maximum": 3
     },
+    "rootBoneName": {
+      "type": "string",
+      "description": "Specifies the name of the root bone when the model file does not specify an armature."
+    },
     "physPreset": {
       "type": "string"
     },
