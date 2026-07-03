@@ -61,6 +61,41 @@
           "type": "number"
         }
       }
+    },
+    "KerningPair": {
+      "type": "object",
+      "required": ["firstLetter", "secondLetter", "kernAmount"],
+      "properties": {
+        "firstLetter": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1
+            },
+            {
+              "type": "integer",
+              "minimum": 0
+            }
+          ]
+        },
+        "secondLetter": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1
+            },
+            {
+              "type": "integer",
+              "minimum": 0
+            }
+          ]
+        },
+        "kernAmount": {
+          "type": "integer"
+        }
+      }
     }
   }
 }
