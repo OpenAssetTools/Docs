@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://openassettools.dev/schema/font/common.v1.json",
+  "definitions": {
+    "Glyph": {
+      "type": "object",
+      "required": [
+        "letter",
+        "x0",
+        "y0",
+        "dx",
+        "pixelWidth",
+        "pixelHeight",
+        "s0",
+        "t0",
+        "s1",
+        "t1"
+      ],
+      "properties": {
+        "letter": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1
+            },
+            {
+              "type": "integer",
+              "minimum": 0
+            }
+          ]
+        },
+        "x0": {
+          "type": "integer"
+        },
+        "y0": {
+          "type": "integer"
+        },
+        "dx": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pixelWidth": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pixelHeight": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "s0": {
+          "type": "number"
+        },
+        "t0": {
+          "type": "number"
+        },
+        "s1": {
+          "type": "number"
+        },
+        "t1": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
