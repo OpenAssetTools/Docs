@@ -51,14 +51,7 @@
       "minimum": 0
     },
     "cameraRegion": {
-      "enum": [
-        "litOpaque",
-        "litTrans",
-        "emissive",
-        "depthHack",
-        "lightMapOpaque",
-        "none"
-      ]
+      "enum": ["litOpaque", "litTrans", "emissive", "depthHack", "none"]
     },
     "techniqueSet": {
       "type": "string"
