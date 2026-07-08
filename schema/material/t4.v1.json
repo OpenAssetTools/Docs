@@ -38,8 +38,8 @@
     },
     "stateBitsEntry": {
       "type": "array",
-      "minItems": 34,
-      "maxItems": 34,
+      "minItems": 67,
+      "maxItems": 67,
       "items": {
         "type": "integer",
         "minimum": -1,
