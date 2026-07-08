@@ -6,7 +6,7 @@
   "required": ["_game", "_type", "_version"],
   "properties": {
     "_game": {
-      "enum": ["iw3", "iw4", "iw5", "t5", "t6"]
+      "enum": ["iw3", "iw4", "iw5", "t4", "t5", "t6"]
     },
     "_type": {
       "const": "font"
@@ -20,6 +20,7 @@
     { "$ref": "http://openassettools.dev/schema/font/iw3.v1.json" },
     { "$ref": "http://openassettools.dev/schema/font/iw4.v1.json" },
     { "$ref": "http://openassettools.dev/schema/font/iw5.v1.json" },
+    { "$ref": "http://openassettools.dev/schema/font/t4.v1.json" },
     { "$ref": "http://openassettools.dev/schema/font/t5.v1.json" },
     { "$ref": "http://openassettools.dev/schema/font/t6.v1.json" }
   ]
