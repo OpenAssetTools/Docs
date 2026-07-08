@@ -7,6 +7,7 @@
     "_version",
     "sortKey",
     "surfaceTypeBits",
+    "layeredSurfaceTypes",
     "stateBitsEntry",
     "stateFlags",
     "cameraRegion",
@@ -22,7 +23,19 @@
     "gameFlags": {
       "type": "array",
       "items": {
-        "enum": ["1", "2", "4", "8", "10", "20", "CASTS_SHADOW", "40", "80"]
+        "enum": [
+          "1",
+          "2",
+          "4",
+          "8",
+          "10",
+          "20",
+          "CASTS_SHADOW",
+          "40",
+          "80",
+          "100",
+          "200"
+        ]
       }
     },
     "sortKey": {
@@ -36,10 +49,14 @@
       "type": "integer",
       "minimum": 0
     },
+    "layeredSurfaceTypes": {
+      "type": "integer",
+      "minimum": 0
+    },
     "stateBitsEntry": {
       "type": "array",
-      "minItems": 67,
-      "maxItems": 67,
+      "minItems": 59,
+      "maxItems": 59,
       "items": {
         "type": "integer",
         "minimum": -1,
@@ -86,7 +103,7 @@
           "$ref": "http://openassettools.dev/schema/material/common.v1.json#/definitions/TextureHash"
         }
       ],
-      "required": ["semantic", "samplerState", "image"],
+      "required": ["semantic", "samplerState", "isMatureContent", "image"],
       "properties": {
         "semantic": {
           "enum": [
@@ -106,6 +123,9 @@
         },
         "samplerState": {
           "$ref": "#/definitions/SamplerState"
+        },
+        "isMatureContent": {
+          "type": "boolean"
         },
         "image": {
           "type": "string"
