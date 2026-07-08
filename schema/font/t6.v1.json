@@ -2,47 +2,78 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://openassettools.dev/schema/font/t6.v1.json",
   "type": "object",
-  "required": [
-    "_game",
-    "_version",
-    "pixelHeight",
-    "isScalingAllowed",
-    "material",
-    "glyphs",
-    "kerningPairs"
-  ],
+  "required": ["_game", "_version"],
   "properties": {
     "_game": {
       "const": "t6"
     },
     "_version": {
       "const": 1
-    },
-    "pixelHeight": {
-      "type": "integer",
-      "minimum": 0
-    },
-    "isScalingAllowed": {
-      "type": "boolean"
-    },
-    "material": {
-      "type": "string"
-    },
-    "glowMaterial": {
-      "type": "string"
-    },
-    "glyphs": {
-      "type": "array",
-      "minItems": 96,
-      "items": {
-        "$ref": "http://openassettools.dev/schema/font/common.v1.json#/definitions/Glyph"
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["file"],
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "yOffset": {
+          "type": "integer"
+        },
+        "isScalingAllowed": {
+          "type": "boolean"
+        },
+        "generatedMaterialName": {
+          "type": "string"
+        },
+        "generatedGlowMaterialName": {
+          "type": "string"
+        }
       }
     },
-    "kerningPairs": {
-      "type": "array",
-      "items": {
-        "$ref": "http://openassettools.dev/schema/font/common.v1.json#/definitions/KerningPair"
+    {
+      "type": "object",
+      "required": [
+        "pixelHeight",
+        "isScalingAllowed",
+        "material",
+        "glyphs",
+        "kerningPairs"
+      ],
+      "properties": {
+        "pixelHeight": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "isScalingAllowed": {
+          "type": "boolean"
+        },
+        "material": {
+          "type": "string"
+        },
+        "glowMaterial": {
+          "type": "string"
+        },
+        "glyphs": {
+          "type": "array",
+          "minItems": 96,
+          "items": {
+            "$ref": "http://openassettools.dev/schema/font/common.v1.json#/definitions/Glyph"
+          }
+        },
+        "kerningPairs": {
+          "type": "array",
+          "items": {
+            "$ref": "http://openassettools.dev/schema/font/common.v1.json#/definitions/KerningPair"
+          }
+        }
       }
     }
-  }
+  ]
 }
