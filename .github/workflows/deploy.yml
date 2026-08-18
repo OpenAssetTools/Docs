@@ -28,23 +28,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@v7.0.1
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
-          fetch-depth: 0
-      - name: Setup Node
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
+          cache: "pnpm"
       - name: Setup Pages
         uses: actions/configure-pages@v6
-      - name: Install dependencies
-        run: npm ci
-      - name: Build with VitePress
+      - name: Build docs
         run: |
+          pnpm ci
           mkdir ./dist
-          npm run docs:build
+          pnpm run docs:build
           touch ./dist/.nojekyll
       - name: Copy schemas
         run: cp -r ./schema ./dist
