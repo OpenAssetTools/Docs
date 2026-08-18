@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: false
+minimumReleaseAge: 4320 # 3 days
+trustPolicy: no-downgrade
+overrides:
+  vite: 6.4.3
