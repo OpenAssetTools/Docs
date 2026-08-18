@@ -2,25 +2,19 @@ name: ci
 
 on:
   pull_request:
-    branches: ["main"]
 
 jobs:
   # Build job
   check_pr_builds:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@v7.0.1
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
-          fetch-depth: 0
-      - name: Setup Node
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Check formatting
-        run: npm run format:check
-      - name: Build with VitePress
-        run: npm run docs:build
+          cache: "pnpm"
+      - name: Build docs
+        run: |
+          pnpm ci
+          pnpm run format:check
+          pnpm docs:build

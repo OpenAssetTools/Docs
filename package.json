@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Documentation for and around OpenAssetTools",
   "private": "true",
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
