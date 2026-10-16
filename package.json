@@ -13,7 +13,7 @@
     "format:check": "prettier --check ."
   },
   "devDependencies": {
-    "prettier": "3.9.9",
+    "prettier": "3.9.10",
     "slugify": "1.6.9",
     "vitepress": "1.6.4",
     "vue": "3.5.43"
